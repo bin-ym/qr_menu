@@ -97,11 +97,11 @@ export default function CategoriesPage() {
           value={newName}
           onChange={(e) => setNewName(e.target.value)}
           placeholder="New category name"
-          className="flex-1 rounded-md border border-zinc-300 px-3 py-2 text-sm"
+          className="flex-1 rounded-lg border border-zinc-300 px-3 py-2.5 text-sm transition-colors focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/20"
         />
         <button
           type="submit"
-          className="rounded-md bg-zinc-900 px-4 py-2 text-sm font-medium text-white hover:bg-zinc-800"
+          className="rounded-lg bg-indigo-600 px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition-all hover:bg-indigo-700"
         >
           Add
         </button>
@@ -127,7 +127,7 @@ export default function CategoriesPage() {
                   onBlur={() => saveEdit(cat.id)}
                   onKeyDown={(e) => e.key === 'Enter' && saveEdit(cat.id)}
                   autoFocus
-                  className="flex-1 rounded-md border border-zinc-300 px-2 py-1 text-sm"
+                  className="flex-1 rounded-lg border border-zinc-300 px-2 py-1 text-sm transition-colors focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/20"
                 />
               ) : (
                 <span className="text-sm text-zinc-900">{cat.name}</span>
@@ -135,13 +135,13 @@ export default function CategoriesPage() {
               <div className="flex gap-3">
                 <button
                   onClick={() => startEdit(cat)}
-                  className="text-xs font-medium text-zinc-600 underline hover:text-zinc-900"
+                  className="text-xs font-medium text-indigo-600 hover:text-indigo-800"
                 >
                   Edit
                 </button>
                 <button
                   onClick={() => handleDelete(cat.id)}
-                  className="text-xs font-medium text-red-600 underline hover:text-red-800"
+                  className="text-xs font-medium text-red-500 hover:text-red-700"
                 >
                   Delete
                 </button>

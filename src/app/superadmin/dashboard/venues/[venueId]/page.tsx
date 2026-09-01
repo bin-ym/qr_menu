@@ -168,7 +168,7 @@ export default function VenueDetailsPage() {
       </button>
 
       <div className="mb-6 flex items-center justify-between">
-        <h1 className="text-2xl font-semibold text-zinc-900">{venue.name}</h1>
+        <h1 className="text-2xl font-bold text-zinc-900">{venue.name}</h1>
         <span
           className={`rounded-full px-3 py-1 text-xs font-medium ${
             venue.is_active
@@ -211,7 +211,7 @@ export default function VenueDetailsPage() {
         <input
           value={name}
           onChange={(e) => setName(e.target.value)}
-          className="mb-3 w-full rounded-md border border-zinc-300 px-3 py-2 text-sm"
+          className="mb-3 w-full rounded-lg border border-zinc-300 px-3 py-2.5 text-sm transition-colors focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/20"
         />
 
         <label className="mb-1 block text-sm font-medium text-zinc-700">
@@ -220,7 +220,7 @@ export default function VenueDetailsPage() {
         <select
           value={type}
           onChange={(e) => setType(e.target.value)}
-          className="mb-3 w-full rounded-md border border-zinc-300 px-3 py-2 text-sm capitalize"
+          className="mb-3 w-full rounded-lg border border-zinc-300 px-3 py-2.5 text-sm capitalize transition-colors focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/20"
         >
           {VENUE_TYPES.map((t) => (
             <option key={t} value={t}>
@@ -235,21 +235,21 @@ export default function VenueDetailsPage() {
         <input
           value={address}
           onChange={(e) => setAddress(e.target.value)}
-          className="mb-4 w-full rounded-md border border-zinc-300 px-3 py-2 text-sm"
+          className="mb-4 w-full rounded-lg border border-zinc-300 px-3 py-2.5 text-sm transition-colors focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/20"
         />
 
         <div className="flex gap-2">
           <button
             type="submit"
             disabled={saving}
-            className="rounded-md bg-zinc-900 px-4 py-2 text-sm font-medium text-white hover:bg-zinc-800 disabled:opacity-50"
+            className="rounded-lg bg-indigo-600 px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition-all hover:bg-indigo-700 disabled:opacity-50"
           >
             {saving ? "Saving..." : "Save Changes"}
           </button>
           <button
             type="button"
             onClick={toggleActive}
-            className="rounded-md border border-zinc-300 px-4 py-2 text-sm font-medium text-zinc-700 hover:bg-zinc-100"
+            className="rounded-lg border border-zinc-200 px-4 py-2.5 text-sm font-medium text-zinc-600 transition-colors hover:bg-zinc-50"
           >
             {venue.is_active ? "Suspend Venue" : "Reactivate Venue"}
           </button>
@@ -266,7 +266,7 @@ export default function VenueDetailsPage() {
             <p className="text-sm text-zinc-700">{admin.email}</p>
             <button
               onClick={sendPasswordReset}
-              className="text-xs font-medium text-zinc-600 underline hover:text-zinc-900"
+              className="text-xs font-medium text-indigo-600 hover:text-indigo-800"
             >
               Send password reset
             </button>
@@ -286,7 +286,7 @@ export default function VenueDetailsPage() {
                   value={newAdminEmail}
                   onChange={(e) => setNewAdminEmail(e.target.value)}
                   required
-                  className="w-full rounded-md border border-zinc-300 px-3 py-2 text-sm"
+                  className="w-full rounded-lg border border-zinc-300 px-3 py-2 text-sm transition-colors focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/20"
                 />
               </div>
               <div>
@@ -299,13 +299,13 @@ export default function VenueDetailsPage() {
                   onChange={(e) => setNewAdminPassword(e.target.value)}
                   required
                   minLength={6}
-                  className="w-full rounded-md border border-zinc-300 px-3 py-2 text-sm"
+                  className="w-full rounded-lg border border-zinc-300 px-3 py-2 text-sm transition-colors focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/20"
                 />
               </div>
               <button
                 type="submit"
                 disabled={creatingAdmin}
-                className="rounded-md bg-zinc-900 px-4 py-2 text-sm font-medium text-white hover:bg-zinc-800 disabled:opacity-50"
+                className="rounded-lg bg-indigo-600 px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition-all hover:bg-indigo-700 disabled:opacity-50"
               >
                 {creatingAdmin ? "Creating..." : "Create Admin"}
               </button>

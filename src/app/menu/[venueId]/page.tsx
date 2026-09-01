@@ -99,7 +99,7 @@ export default function MenuPage() {
   return (
     <div className="min-h-screen bg-zinc-50">
       <header className="border-b border-zinc-200 bg-white px-4 py-4">
-        <h1 className="text-lg font-semibold text-zinc-900">{venue.name}</h1>
+        <h1 className="text-lg font-bold text-zinc-900">{venue.name}</h1>
         {tableNumber && (
           <p className="text-xs text-zinc-500">Table {tableNumber}</p>
         )}
@@ -113,8 +113,8 @@ export default function MenuPage() {
             onClick={() => setActiveCategory(cat.id)}
             className={`whitespace-nowrap rounded-full px-4 py-1.5 text-sm font-medium ${
               activeCategory === cat.id
-                ? 'bg-zinc-900 text-white'
-                : 'bg-zinc-100 text-zinc-600'
+                ? 'bg-indigo-600 text-white shadow-sm'
+                : 'bg-indigo-50 text-indigo-700'
             }`}
           >
             {cat.name}
@@ -135,7 +135,7 @@ export default function MenuPage() {
               href={`/menu/${venueId}/item/${item.id}${
                 tableNumber ? `?table=${tableNumber}` : ''
               }`}
-              className="rounded-lg border border-zinc-200 bg-white p-3 hover:shadow-sm"
+              className="rounded-xl border border-zinc-200 bg-white p-3 transition-shadow hover:shadow-md"
             >
               <div className="mb-2 flex h-24 w-full items-center justify-center rounded-md bg-zinc-100 text-xs text-zinc-400">
                 {item.photo_url ? (

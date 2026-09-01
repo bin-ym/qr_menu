@@ -71,8 +71,10 @@ export default function AdminDashboardLayout({
     <div className="flex min-h-screen bg-zinc-50">
       <aside className="flex w-64 flex-col justify-between border-r border-zinc-200 bg-white p-6">
         <div>
-          <h2 className="mb-1 text-lg font-semibold text-zinc-900">{venueName || 'Admin'}</h2>
-          <p className="mb-8 text-xs text-zinc-500">Venue Dashboard</p>
+          <div className="mb-8">
+            <h2 className="text-lg font-bold text-zinc-900">{venueName || 'Admin'}</h2>
+            <p className="mt-0.5 text-xs font-medium text-indigo-600">Venue Dashboard</p>
+          </div>
           <nav className="flex flex-col gap-1">
             {navItems.map((item) => {
               const active = pathname === item.href
@@ -80,10 +82,10 @@ export default function AdminDashboardLayout({
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`rounded-md px-3 py-2 text-sm font-medium ${
+                  className={`rounded-lg px-3 py-2 text-sm font-medium transition-colors ${
                     active
-                      ? 'bg-zinc-900 text-white'
-                      : 'text-zinc-600 hover:bg-zinc-100'
+                      ? 'bg-indigo-600 text-white shadow-sm'
+                      : 'text-zinc-600 hover:bg-indigo-50 hover:text-indigo-700'
                   }`}
                 >
                   {item.label}
@@ -97,7 +99,7 @@ export default function AdminDashboardLayout({
           <p className="mb-2 truncate text-xs text-zinc-500">{email}</p>
           <button
             onClick={handleLogout}
-            className="w-full rounded-md border border-zinc-300 px-3 py-2 text-sm font-medium text-zinc-700 hover:bg-zinc-100"
+            className="w-full rounded-lg border border-zinc-200 px-3 py-2 text-sm font-medium text-zinc-600 transition-colors hover:bg-zinc-50 hover:text-zinc-900"
           >
             Log out
           </button>

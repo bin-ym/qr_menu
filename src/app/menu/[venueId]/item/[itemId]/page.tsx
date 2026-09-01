@@ -65,7 +65,7 @@ export default function ItemDetailPage() {
       <header className="border-b border-zinc-200 bg-white px-4 py-4">
         <button
           onClick={() => router.push(backUrl)}
-          className="text-sm text-zinc-500 hover:text-zinc-900"
+          className="text-sm text-indigo-600 hover:text-indigo-800"
         >
           ← Back to menu
         </button>

@@ -268,7 +268,7 @@ export default function ItemsPage() {
         <button
           onClick={() => setShowForm(!showForm)}
           disabled={categories.length === 0}
-          className="rounded-md bg-zinc-900 px-4 py-2 text-sm font-medium text-white hover:bg-zinc-800 disabled:opacity-50"
+          className="rounded-lg bg-indigo-600 px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition-all hover:bg-indigo-700 disabled:opacity-50"
         >
           {showForm ? "Cancel" : "+ New Item"}
         </button>
@@ -292,7 +292,7 @@ export default function ItemsPage() {
             value={name}
             onChange={(e) => setName(e.target.value)}
             required
-            className="mb-3 w-full rounded-md border border-zinc-300 px-3 py-2 text-sm"
+            className="mb-3 w-full rounded-lg border border-zinc-300 px-3 py-2.5 text-sm transition-colors focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/20"
           />
 
           <label className="mb-1 block text-sm font-medium text-zinc-700">
@@ -302,7 +302,7 @@ export default function ItemsPage() {
             value={categoryId}
             onChange={(e) => setCategoryId(e.target.value)}
             required
-            className="mb-3 w-full rounded-md border border-zinc-300 px-3 py-2 text-sm"
+            className="mb-3 w-full rounded-lg border border-zinc-300 px-3 py-2.5 text-sm transition-colors focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/20"
           >
             <option value="">Select category</option>
             {categories.map((c) => (
@@ -319,7 +319,7 @@ export default function ItemsPage() {
             value={description}
             onChange={(e) => setDescription(e.target.value)}
             rows={2}
-            className="mb-3 w-full rounded-md border border-zinc-300 px-3 py-2 text-sm"
+            className="mb-3 w-full rounded-lg border border-zinc-300 px-3 py-2.5 text-sm transition-colors focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/20"
           />
 
           <label className="mb-1 block text-sm font-medium text-zinc-700">
@@ -331,7 +331,7 @@ export default function ItemsPage() {
             value={price}
             onChange={(e) => setPrice(e.target.value)}
             required
-            className="mb-4 w-full rounded-md border border-zinc-300 px-3 py-2 text-sm"
+            className="mb-4 w-full rounded-lg border border-zinc-300 px-3 py-2.5 text-sm transition-colors focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/20"
           />
 
           {error && <p className="mb-3 text-sm text-red-600">{error}</p>}
@@ -359,7 +359,7 @@ export default function ItemsPage() {
           <button
             type="submit"
             disabled={saving}
-            className="w-full rounded-md bg-zinc-900 px-4 py-2 text-sm font-medium text-white hover:bg-zinc-800 disabled:opacity-50"
+            className="w-full rounded-lg bg-indigo-600 px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition-all hover:bg-indigo-700 disabled:opacity-50"
           >
             {uploading
               ? "Uploading files..."
@@ -402,7 +402,7 @@ export default function ItemsPage() {
                           <input
                             value={editName}
                             onChange={(e) => setEditName(e.target.value)}
-                            className="w-full rounded-md border border-zinc-300 px-3 py-2 text-sm"
+                            className="w-full rounded-lg border border-zinc-300 px-3 py-2 text-sm transition-colors focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/20"
                           />
                         </div>
 
@@ -413,7 +413,7 @@ export default function ItemsPage() {
                           <select
                             value={editCategoryId}
                             onChange={(e) => setEditCategoryId(e.target.value)}
-                            className="w-full rounded-md border border-zinc-300 px-3 py-2 text-sm"
+                            className="w-full rounded-lg border border-zinc-300 px-3 py-2 text-sm transition-colors focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/20"
                           >
                             <option value="">Uncategorized</option>
                             {categories.map((c) => (
@@ -432,7 +432,7 @@ export default function ItemsPage() {
                             value={editDescription}
                             onChange={(e) => setEditDescription(e.target.value)}
                             rows={2}
-                            className="w-full rounded-md border border-zinc-300 px-3 py-2 text-sm"
+                            className="w-full rounded-lg border border-zinc-300 px-3 py-2 text-sm transition-colors focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/20"
                           />
                         </div>
 
@@ -445,7 +445,7 @@ export default function ItemsPage() {
                             step="0.01"
                             value={editPrice}
                             onChange={(e) => setEditPrice(e.target.value)}
-                            className="w-full rounded-md border border-zinc-300 px-3 py-2 text-sm"
+                            className="w-full rounded-lg border border-zinc-300 px-3 py-2 text-sm transition-colors focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/20"
                           />
                         </div>
 
@@ -485,13 +485,13 @@ export default function ItemsPage() {
                           <button
                             onClick={() => saveEdit(item.id)}
                             disabled={editSaving}
-                            className="rounded-md bg-zinc-900 px-4 py-2 text-sm font-medium text-white hover:bg-zinc-800 disabled:opacity-50"
+                            className="rounded-lg bg-indigo-600 px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition-all hover:bg-indigo-700 disabled:opacity-50"
                           >
                             {editSaving ? "Saving..." : "Save Changes"}
                           </button>
                           <button
                             onClick={cancelEdit}
-                            className="rounded-md border border-zinc-300 px-4 py-2 text-sm font-medium text-zinc-700 hover:bg-zinc-100"
+                            className="rounded-lg border border-zinc-200 px-4 py-2.5 text-sm font-medium text-zinc-600 transition-colors hover:bg-zinc-50"
                           >
                             Cancel
                           </button>
@@ -529,13 +529,13 @@ export default function ItemsPage() {
                       <div className="flex justify-end gap-3">
                         <button
                           onClick={() => startEdit(item)}
-                          className="text-xs font-medium text-zinc-600 underline hover:text-zinc-900"
+                          className="text-xs font-medium text-indigo-600 hover:text-indigo-800"
                         >
                           Edit
                         </button>
                         <button
                           onClick={() => handleDelete(item.id)}
-                          className="text-xs font-medium text-red-600 underline hover:text-red-800"
+                          className="text-xs font-medium text-red-500 hover:text-red-700"
                         >
                           Delete
                         </button>

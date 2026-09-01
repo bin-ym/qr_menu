@@ -49,14 +49,20 @@ export default function SuperAdminLoginPage() {
   }
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50">
+    <div className="flex min-h-screen items-center justify-center bg-gradient-to-br from-zinc-50 to-indigo-50">
       <form
         onSubmit={handleLogin}
-        className="w-full max-w-sm rounded-lg border border-zinc-200 bg-white p-8 shadow-sm"
+        className="w-full max-w-sm rounded-2xl border border-zinc-200 bg-white p-8 shadow-lg"
       >
-        <h1 className="mb-6 text-xl font-semibold text-zinc-900">
-          SuperAdmin Login
-        </h1>
+        <div className="mb-6">
+          <div className="mb-2 flex h-10 w-10 items-center justify-center rounded-xl bg-indigo-600 text-sm font-bold text-white">
+            SA
+          </div>
+          <h1 className="text-xl font-bold text-zinc-900">
+            SuperAdmin Login
+          </h1>
+          <p className="mt-1 text-sm text-zinc-500">Platform administration access</p>
+        </div>
 
         <label className="mb-1 block text-sm font-medium text-zinc-700">
           Email
@@ -66,7 +72,7 @@ export default function SuperAdminLoginPage() {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
-          className="mb-4 w-full rounded-md border border-zinc-300 px-3 py-2 text-sm"
+          className="mb-4 w-full rounded-lg border border-zinc-300 px-3 py-2.5 text-sm transition-colors focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/20"
         />
 
         <label className="mb-1 block text-sm font-medium text-zinc-700">
@@ -77,7 +83,7 @@ export default function SuperAdminLoginPage() {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
-          className="mb-4 w-full rounded-md border border-zinc-300 px-3 py-2 text-sm"
+          className="mb-4 w-full rounded-lg border border-zinc-300 px-3 py-2.5 text-sm transition-colors focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/20"
         />
 
         {error && <p className="mb-4 text-sm text-red-600">{error}</p>}
@@ -85,7 +91,7 @@ export default function SuperAdminLoginPage() {
         <button
           type="submit"
           disabled={loading}
-          className="w-full rounded-md bg-zinc-900 px-4 py-2 text-sm font-medium text-white hover:bg-zinc-800 disabled:opacity-50"
+          className="w-full rounded-lg bg-indigo-600 px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition-all hover:bg-indigo-700 disabled:opacity-50"
         >
           {loading ? "Signing in..." : "Sign In"}
         </button>

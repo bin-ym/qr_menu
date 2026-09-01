@@ -115,12 +115,12 @@ export default function TablesPage() {
             value={newLabel}
             onChange={(e) => setNewLabel(e.target.value)}
             placeholder="e.g. Patio 3"
-            className="rounded-md border border-zinc-300 px-3 py-2 text-sm"
+            className="rounded-lg border border-zinc-300 px-3 py-2.5 text-sm transition-colors focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/20"
           />
         </div>
         <button
           type="submit"
-          className="rounded-md bg-zinc-900 px-4 py-2 text-sm font-medium text-white hover:bg-zinc-800"
+          className="rounded-lg bg-indigo-600 px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition-all hover:bg-indigo-700"
         >
           + Add Table
         </button>
@@ -137,7 +137,7 @@ export default function TablesPage() {
           {tables.map((t) => (
             <div
               key={t.id}
-              className="flex flex-col items-center rounded-lg border border-zinc-200 bg-white p-4"
+              className="flex flex-col items-center rounded-xl border border-zinc-200 bg-white p-4 transition-shadow hover:shadow-md"
             >
               <p className="mb-1 text-sm font-semibold text-zinc-900">
                 Table {t.table_number}
@@ -159,13 +159,13 @@ export default function TablesPage() {
               <div className="flex gap-2">
                 <button
                   onClick={() => downloadQr(t)}
-                  className="text-xs font-medium text-zinc-600 underline hover:text-zinc-900"
+                  className="text-xs font-medium text-indigo-600 hover:text-indigo-800"
                 >
                   Download
                 </button>
                 <button
                   onClick={() => handleDelete(t.id)}
-                  className="text-xs font-medium text-red-600 underline hover:text-red-800"
+                  className="text-xs font-medium text-red-500 hover:text-red-700"
                 >
                   Delete
                 </button>

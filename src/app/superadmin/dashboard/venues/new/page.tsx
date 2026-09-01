@@ -68,14 +68,14 @@ export default function NewVenuePage() {
           value={name}
           onChange={(e) => setName(e.target.value)}
           required
-          className="mb-3 w-full rounded-md border border-zinc-300 px-3 py-2 text-sm"
+          className="mb-3 w-full rounded-lg border border-zinc-300 px-3 py-2.5 text-sm transition-colors focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/20"
         />
 
         <label className="mb-1 block text-sm font-medium text-zinc-700">Type</label>
         <select
           value={type}
           onChange={(e) => setType(e.target.value)}
-          className="mb-3 w-full rounded-md border border-zinc-300 px-3 py-2 text-sm capitalize"
+          className="mb-3 w-full rounded-lg border border-zinc-300 px-3 py-2.5 text-sm capitalize transition-colors focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/20"
         >
           {VENUE_TYPES.map((t) => (
             <option key={t} value={t} className="capitalize">
@@ -88,7 +88,7 @@ export default function NewVenuePage() {
         <input
           value={address}
           onChange={(e) => setAddress(e.target.value)}
-          className="mb-3 w-full rounded-md border border-zinc-300 px-3 py-2 text-sm"
+          className="mb-3 w-full rounded-lg border border-zinc-300 px-3 py-2.5 text-sm transition-colors focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/20"
         />
 
         <hr className="my-4 border-zinc-200" />
@@ -99,7 +99,7 @@ export default function NewVenuePage() {
           value={adminEmail}
           onChange={(e) => setAdminEmail(e.target.value)}
           required
-          className="mb-3 w-full rounded-md border border-zinc-300 px-3 py-2 text-sm"
+          className="mb-3 w-full rounded-lg border border-zinc-300 px-3 py-2.5 text-sm transition-colors focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/20"
         />
 
         <label className="mb-1 block text-sm font-medium text-zinc-700">Admin Password</label>
@@ -109,7 +109,7 @@ export default function NewVenuePage() {
           onChange={(e) => setAdminPassword(e.target.value)}
           required
           minLength={6}
-          className="mb-4 w-full rounded-md border border-zinc-300 px-3 py-2 text-sm"
+          className="mb-4 w-full rounded-lg border border-zinc-300 px-3 py-2.5 text-sm transition-colors focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/20"
         />
 
         {error && <p className="mb-3 text-sm text-red-600">{error}</p>}
@@ -117,7 +117,7 @@ export default function NewVenuePage() {
         <button
           type="submit"
           disabled={creating}
-          className="w-full rounded-md bg-zinc-900 px-4 py-2 text-sm font-medium text-white hover:bg-zinc-800 disabled:opacity-50"
+          className="w-full rounded-lg bg-indigo-600 px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition-all hover:bg-indigo-700 disabled:opacity-50"
         >
           {creating ? 'Creating...' : 'Create Venue + Admin'}
         </button>
